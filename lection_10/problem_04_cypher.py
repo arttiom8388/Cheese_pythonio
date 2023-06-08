@@ -12,16 +12,19 @@ class Cipher:
         for i in range(len(self.crypto_arr_1)):
             self.encoding_lib[self.crypto_arr_1[i]] = self.crypto_arr_2[i]
             self.decoding_lib[self.crypto_arr_2[i]] = self.crypto_arr_1[i]
+
     def encode(self, input_str: str) -> str:
         rez = ""
         for x in input_str:
             rez += str(self.encoding_lib.get(x, x))
         return rez
+
     def decode(self, input_str: str) -> str:
         rez = ""
         for x in input_str:
             rez += str(self.decoding_lib.get(x, x))
         return rez
+
 
 def main():
     cipher = Cipher()
@@ -34,4 +37,6 @@ def main():
     print()
     text = cipher.encode(text)
     print(text)
+
+
 main()
