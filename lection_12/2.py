@@ -34,10 +34,6 @@ class Validator():
         return True
         
 
-
-
-
-
 def main():
     validator = Validator()
     print(validator.validate("user_login", "Some!Password", "mail@mail.com"))
